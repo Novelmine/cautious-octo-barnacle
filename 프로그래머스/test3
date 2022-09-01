@@ -1,0 +1,42 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12977?language=csharp
+
+using System;
+
+class Solution
+{
+    public int solution(int[] nums)
+    {
+        int answer = 0;
+        int con = 0;
+        bool flg = false;
+        for (int i=0; i < nums.Length; i++)
+        {
+            int un = 0;
+            int a = nums[i];
+            for (int o=i+1; o < nums.Length; o++)
+            {
+                int b = nums[o];
+                for (int p=o+1; p < nums.Length; p++)
+                {
+                    flg = false;
+                    int c = nums[p];
+                    for (int q=2; q < c+a+b ; q++)
+                    {
+                        if(((c+a+b) % q) == 0)
+                        {
+                            flg = true;
+                        }
+
+                    }
+                    if (flg == false)
+                    {
+                        con++;
+                    }
+                }
+            }
+        }
+        
+        answer = con;
+        return answer;
+    }
+}
