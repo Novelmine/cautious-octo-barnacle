@@ -5,6 +5,17 @@ using System;
 public class Solution {
     public int solution(int[,] sizes) {
         int answer = 0;
+        int m = 0;
+        int n = 0;
+        for (int i=0; i<(sizes.Length/2); i++)
+        {
+            int u = Math.Max(sizes[i,0],sizes[i,1]);
+            int y = Math.Min(sizes[i,0],sizes[i,1]);
+            
+            m = Math.Max(m , u);
+            n = Math.Max(n , y);
+        }
+        answer = m * n ;
         return answer;
     }
 }
