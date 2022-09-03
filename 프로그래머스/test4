@@ -1,0 +1,22 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/86051
+
+using System;
+
+public class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        for (int i = 0; i <=9; i++)
+        {
+            int k = i;
+            if (Array.Exists(numbers, x  => x == k))
+            {
+            }
+            else
+            {
+                answer += i;
+            }
+
+        }
+        return answer;
+    }
+}
