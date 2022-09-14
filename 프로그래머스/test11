@@ -1,0 +1,42 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12901
+using System;
+
+public class Solution {
+    public string solution(int a, int b) {
+        string answer = "";
+        DateTime StartDate = Convert.ToDateTime("2016-01-01");
+        DateTime EndDate = Convert.ToDateTime($"2016-{a}-{b}");
+        TimeSpan dateDiff = EndDate - StartDate;
+        int diffDay = dateDiff.Days;
+        if (diffDay%7 == 0)
+        {
+            answer = "FRI";
+        }
+        if (diffDay%7 == 1)
+        {
+            answer = "SAT";
+        }
+        if (diffDay%7 == 2)
+        {
+            answer = "SUN";
+        }
+        if (diffDay%7 == 3)
+        {
+            answer = "MON";
+        }
+        if (diffDay%7 == 4)
+        {
+            answer = "TUE";
+        }
+        if (diffDay%7 == 5)
+        {
+            answer = "WED";
+        }
+        if (diffDay%7 == 6)
+        {
+            answer = "THU";
+        }
+        
+        return answer;
+    }
+}
