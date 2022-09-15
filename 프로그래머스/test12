@@ -1,0 +1,24 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12935
+
+
+using System.Linq;
+using System.Collections.Generic;
+using System;
+
+public class Solution {
+    public int[] solution(int[] arr) {
+        int[] answer = arr;
+        if (answer.Length == 1)
+        {
+            answer[0] = -1;
+        }
+        else
+        {
+        int k = Array.IndexOf(arr, arr.Min());
+        List<int> list = new List<int>(answer);
+        list.RemoveAt(k);
+        answer = list.ToArray();
+        }
+        return answer;
+    }
+}
