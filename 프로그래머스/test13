@@ -1,0 +1,39 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12926
+
+
+using System;
+
+public class Solution {
+    public string solution(string s, int n) {
+        string answer = "";
+        string k = " ";
+        int q = 0;
+        foreach (var c in s)
+        {
+            if ( c == ' ') 
+            {
+                k = " ";
+                answer = answer + k;
+            }
+            else
+            {
+                if ((int)c + n >= 91 && (int)c <= 90)
+                {
+                    q = (int)c + n - 26;
+                    answer += Convert.ToChar(q);
+                }
+                else if ((int)c + n >= 123)
+                {
+                    q = (int)c + n - 26;
+                    answer += Convert.ToChar(q);
+                }
+                else
+                {
+                    answer += Convert.ToChar((int)c + n);
+                }           
+            }
+        };
+
+        return answer;
+    }
+}
