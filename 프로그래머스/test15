@@ -10,7 +10,7 @@ public class Solution {
         numbers[1] = 1;
         for (int i = 0; i<n-1; i++)
         {
-            numbers[i+2] = numbers[i] + numbers[i+1] ;
+            numbers[i+2] = (numbers[i]%1234567) + (numbers[i+1]%1234567) ;
             answer = numbers[i+2];
         }
         answer = answer%1234567;
