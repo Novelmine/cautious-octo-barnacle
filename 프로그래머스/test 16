@@ -1,0 +1,31 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12909
+
+
+using System;
+
+public class Solution {
+    public bool solution(string s) {
+        bool answer = true;
+        int k = s.Length/2;
+        if(s[0] == ')'  ||  s[s.Length-1] == '(' || (s.Length%2 == 1))
+        {
+            answer =  false;
+        }
+        else
+        {
+            for(int i=0; i<s.Length; i++)
+            {
+                if(s[i] == '(')
+                {
+                    answer = false;
+                }
+                else
+                {
+                    answer = true;
+                }
+            }
+
+        }
+        return answer;
+    }
+}
