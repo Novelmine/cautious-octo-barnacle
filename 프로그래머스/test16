@@ -6,7 +6,7 @@ using System;
 public class Solution {
     public bool solution(string s) {
         bool answer = true;
-        int k = s.Length/2;
+        int k = 0;
         if(s[0] == ')'  ||  s[s.Length-1] == '(' || (s.Length%2 == 1))
         {
             answer =  false;
@@ -17,14 +17,23 @@ public class Solution {
             {
                 if(s[i] == '(')
                 {
-                    answer = false;
+                    k +=  1;
                 }
                 else
                 {
-                    answer = true;
+                    k -= 1;
+                    if (k<0)
+                    {
+                        answer = false;
+                    k = 0;
+                    break;
+                    }
                 }
             }
-
+            if (k != 0)
+            {
+                answer = false;
+            }
         }
         return answer;
     }
