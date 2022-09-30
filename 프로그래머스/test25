@@ -1,0 +1,24 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12921
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Solution {
+    public int solution(int n) {
+    int answer = 0;
+    bool[] list = Enumerable.Repeat<bool>(false, n).ToArray();
+    list[0] = true;
+    for (int i = 1; i <= Math.Sqrt(n); i++)
+    {
+        if (list[i -1] == true) continue;
+        for (int j = i + i; j <= n; j = j + i)
+        {
+            list[j - 1] = true;
+        }
+    }
+    answer = list.Where(x => x == false).Count();
+    return answer;
+    }
+}
