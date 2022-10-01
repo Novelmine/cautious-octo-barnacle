@@ -1,0 +1,20 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12934
+
+
+using System;
+
+public class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        
+        if(Math.Sqrt(n)%1 == 0)
+        {
+            answer = Convert.ToInt64(Math.Pow((Math.Sqrt(n)+1),2));
+        }
+        else
+        {
+            answer = -1;   
+        }
+        return answer;
+    }
+}
