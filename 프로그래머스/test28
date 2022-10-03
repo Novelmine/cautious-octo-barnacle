@@ -1,0 +1,23 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12947
+
+
+using System;
+public class Solution {
+    public bool solution(int x) {
+        bool answer = true;
+        int k = 1;
+        int w = 0;
+        while(x/k > 0)
+        {
+            int p = x / k;
+            w += p % 10;
+            k = k * 10;
+        }
+        
+        if(x%w != 0)
+        {
+            answer = false;
+        }
+        return answer;
+    }
+}
