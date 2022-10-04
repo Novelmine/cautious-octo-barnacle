@@ -1,0 +1,25 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12911
+
+using System;
+using System.Linq;
+
+class Solution 
+{
+    public int solution(int n) 
+   {
+        int answer = 0;
+        string k = Convert.ToString(n, 2);
+        int q = k.Count(x => (x == '1'));
+        while(answer == 0)
+        {
+            n++;
+            string k_1 = Convert.ToString(n, 2);
+            int p = k_1.Count(x => (x == '1'));
+            if(q ==p)
+            {
+                answer = n;
+            }
+        }
+        return answer;
+    }
+}
