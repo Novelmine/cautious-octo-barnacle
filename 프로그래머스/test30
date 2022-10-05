@@ -1,0 +1,23 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12982
+
+
+using System;
+
+public class Solution {
+    public int solution(int[] d, int budget) {
+        Array.Sort(d);
+        int answer = 0;
+        int p = 0;
+        for(int i= 0; i<d.Length; i++)
+        {
+            p += d[answer];
+            if(budget < p)
+            {
+                break;
+            }
+            answer++;
+            Console.WriteLine(p);
+        }
+        return answer;
+    }
+}
