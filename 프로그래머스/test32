@@ -1,0 +1,22 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120923
+
+using System;
+
+public class Solution {
+    public int[] solution(int num, int total) {
+        int[] answer = new int[num] ;
+        int k = 0;
+        for(int i=1; i<num; i++)
+        {
+            k += i;
+        }
+        total = (total - k)/num;
+        answer[0] = total;
+        for(int o=1; o<num; o++)
+        {
+            total++;
+            answer[o] = total;
+        }
+        return answer;
+    }
+}
