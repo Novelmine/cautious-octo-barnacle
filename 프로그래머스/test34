@@ -1,0 +1,70 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12954
+
+
+using System;
+2
+​
+3
+public class Solution {
+4
+    public long[] solution(int x, int n) {
+5
+        long[] answer = new long[n] ;
+6
+        int p = 0;
+7
+        long k = Convert.ToInt64(x);
+8
+        long l = Convert.ToInt64(n);
+9
+        if(k>0)
+10
+        {
+11
+            for(long i=k; i<=k*l ; i = i+k)
+12
+            {
+13
+               answer[p] = i;
+14
+               p++;
+15
+            }
+16
+        }
+17
+        else if(k<0)
+18
+        {
+19
+            for(long i=k; i>=k*l; i =i+k)
+20
+            {
+21
+               answer[p] = i;
+22
+               p++;
+23
+            }
+24
+        }
+25
+        else
+26
+        {
+27
+            for(long  i=0; i<l; i++)
+28
+            {
+29
+               answer[i] = k;
+30
+            }
+31
+        }
+32
+        return answer;
+33
+    }
+34
+}
