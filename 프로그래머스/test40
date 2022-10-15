@@ -1,0 +1,29 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12910
+
+
+using System;
+public class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        int[] answer = new int[arr.Length];
+        int k = 0;
+        for(int i=0; i<arr.Length; i++)
+        {
+            if(arr[i]%divisor == 0)
+            {
+                k++;
+                answer[i] = arr[i];
+            }
+        }
+        if(k == 0)
+        {
+            answer[0] = -1;
+            Array.Resize(ref answer, 1);
+            return answer;
+        }
+        Array.Sort(answer);
+        Array.Reverse(answer);
+        Array.Resize(ref answer, k);
+        Array.Sort(answer);
+        return answer;
+    }
+}
