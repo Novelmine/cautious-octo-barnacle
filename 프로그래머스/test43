@@ -1,0 +1,35 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/68644#
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+public class Solution {
+    public int[] solution(int[] numbers) {
+        Array.Sort(numbers);
+        int k =0;
+        int[] answer = new int[numbers[numbers.Length-1]+numbers[numbers.Length-2]];
+        for(int i=0; i<numbers.Length-1; i++)
+        {
+            for(int j=i+1; j<numbers.Length; j++)
+            {
+                if(numbers[i]+numbers[j] != 0)
+                {
+                    answer[numbers[i]+numbers[j]-1] = numbers[i]+numbers[j];
+                }
+                else
+                {
+                    k++;
+                }                   
+            }
+        }
+        int[] answer2 = answer.Where(num => num != 0).ToArray();
+        if( k != 0)
+        {
+            List<int> list = new List<int>(answer2.ToList());
+            list.Add(0);
+            answer2 = list.ToArray();
+        }
+        Array.Sort(answer2);
+        return answer2;
+    }
+}
