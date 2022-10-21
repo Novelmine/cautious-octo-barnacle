@@ -1,0 +1,19 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/70129
+
+using System;
+using System.Linq;
+
+public class Solution {
+    public int[] solution(string s) {
+        int[] answer = new int[2];
+        while(s != "1")
+        {
+            answer[0] = answer[0] + 1;
+            answer[1] = answer[1] + s.Count(x => x == '0');
+            s = s.Replace("0", "");
+            int k = s.Length;
+            s = Convert.ToString(k, 2);
+        }
+        return answer;
+    }
+}
