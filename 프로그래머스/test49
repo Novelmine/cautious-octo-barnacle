@@ -1,0 +1,17 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120884
+
+
+using System;
+
+public class Solution {
+    public int solution(int chicken) {
+        int answer = 0;
+        int p = chicken;
+        while(p >= 10)
+        {
+            answer = answer + p/10 ;
+            p = p/10 + p%10;
+        }
+        return answer;
+    }
+}
