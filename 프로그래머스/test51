@@ -1,0 +1,28 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/87390
+
+using System;
+
+public class Solution {
+    public int[] solution(int n, long left, long right) {
+        long[] ans = new long[right - left + 1];
+        long k =  left;
+        for(long i = 0; i<right - left+1; i++)
+        {
+            k =  left+ i;
+            if(k%n == 0)
+            {
+                ans[i] = (k/n)+1;
+            }
+            else if( k%n < (k/n)+1)
+            {
+                ans[i] = (k/n)+1;
+            }
+            else
+            {
+                ans[i] = n - (n -((k%n)+1));
+            }
+        }
+        int[] answer = Array.ConvertAll(ans, item => Convert.ToInt32(item));
+        return answer;
+    }
+}
