@@ -1,0 +1,43 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/42628
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+public class Solution {
+    public int[] solution(string[] operations) {
+        int[] answer = new int[2];
+        List<int> num = new List<int>();
+        for(int i=0; i<operations.Length; i++)
+        {
+            if(operations[i].Contains("I"))
+            {
+                num.Add(Int32.Parse(operations[i].Substring(2,(operations[i].Length)-2)));
+                num.Sort((x, y) => y.CompareTo(x));
+            } 
+            else if(operations[i].Contains("D 1") && num.Count != 0)
+            {
+                num.RemoveAt(0);
+                num.Sort((x, y) => y.CompareTo(x));
+            }
+            else if(operations[i].Contains("D -1") && num.Count != 0)
+            {
+                num.Sort();
+                num.RemoveAt(0);
+                num.Sort((x, y) => y.CompareTo(x));
+            }
+        }
+        if(num.Count == 0)
+        {
+            answer[0] = 0;
+            answer[1] = 0;
+        }
+        else
+        {
+            answer[0] = num[0];
+            answer[1] = num[num.Count-1];
+        }    
+        return answer;
+    }
+}
