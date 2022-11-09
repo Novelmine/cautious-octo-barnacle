@@ -1,0 +1,16 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120922
+
+
+using System;
+
+public class Solution {
+    public int solution(int M, int N) {
+        int k = (M-1) + M*(N-1);
+        int answer = 0;
+        if(k > 0)
+        {
+           answer = (M-1) + M*(N-1);
+        }
+        return answer;
+    }
+}
