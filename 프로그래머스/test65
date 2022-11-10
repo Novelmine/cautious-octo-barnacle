@@ -1,0 +1,33 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/49993
+using System;
+
+public class Solution {
+    public int solution(string skill, string[] skill_trees) {
+        int answer = 0;
+        for(int i=0; i<skill_trees.Length; i++)
+        {
+            string sk = skill_trees[i];
+            int q = 0;
+            for(int p=0; p<skill.Length-1; p++)
+            {
+                if(sk.IndexOf(skill[p]) > sk.IndexOf(skill[p+1]) &&  sk.IndexOf(skill[p+1]) != -1)
+                {
+                    break;
+                }
+                else if(sk.IndexOf(skill[p]) == -1 && sk.IndexOf(skill[p+1]) > -1 )
+                {
+                    break;
+                }
+                else
+                {
+                    q++;
+                }
+            }
+            if(q == skill.Length-1)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
