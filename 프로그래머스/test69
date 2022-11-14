@@ -1,0 +1,37 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120907
+
+using System;
+
+public class Solution {
+    public string[] solution(string[] quiz) {
+        string[] answer = new string[quiz.Length];
+        for(int i=0; i<quiz.Length; i++)
+        {
+            string[] nums = quiz[i].Split(' ');
+            if(nums[1] == "-")
+            {
+                if(Int32.Parse(nums[0]) - Int32.Parse(nums[2]) == Int32.Parse(nums[4]))
+                {
+                    answer[i] = "O";
+                }
+                else
+                {
+                    answer[i] = "X";
+                }
+            }
+            else
+            {
+                if(Int32.Parse(nums[0]) + Int32.Parse(nums[2]) == Int32.Parse(nums[4]))
+                {
+                    answer[i] = "O";
+                }
+                else
+                {
+                    answer[i] = "X";
+                }
+            }
+                
+        }
+        return answer;
+    }
+}
