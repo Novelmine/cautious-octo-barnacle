@@ -1,0 +1,20 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120871
+
+using System;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int k = 0;
+        while(n > k)
+        {
+            answer++;
+            k++;
+            if(answer.ToString().Contains("3") || answer%3 == 0)
+            {
+                k--;
+            }
+        }
+        return answer;
+    }
+}
