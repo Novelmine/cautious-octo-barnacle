@@ -1,0 +1,46 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/42587
+
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+public class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        List<int> intList = priorities.ToList();
+        while(true)
+        {
+
+            if(intList.Max() == intList[0])
+            {
+                Console.WriteLine(intList[0]);
+                if(location != 0)
+                {
+                    intList.RemoveAt(0);
+                    location--;
+                    answer++;
+                }
+                else
+                {
+                    answer++;
+                    break;
+                }
+            }
+            else
+            {
+                int k = intList[0];
+                intList.RemoveAt(0);
+                intList.Add(k);
+                if(location <= 0)
+                {
+                    location = intList.Count - 1;
+                }
+                else
+                {
+                    location = location - 1;
+                }
+            }
+        }
+        return answer;
+    }
+}
