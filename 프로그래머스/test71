@@ -13,7 +13,6 @@ public class Solution {
 
             if(intList.Max() == intList[0])
             {
-                Console.WriteLine(intList[0]);
                 if(location != 0)
                 {
                     intList.RemoveAt(0);
