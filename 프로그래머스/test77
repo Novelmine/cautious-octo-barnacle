@@ -1,0 +1,23 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12914#
+
+using System;
+public class Solution {
+    public long solution(int n) {
+        long[] fibo = new long[3]{1,1,1};
+        long answer = 1;
+        fibo[0] = 1;
+        fibo[1] = 1;
+        for(int i = 2; i<= n; i++)
+        {
+            fibo[2] = fibo[0] + fibo[1];
+            if(fibo[2] > 1234567)
+            {
+                fibo[2] = fibo[2]%1234567;
+            }
+            fibo[0] = fibo[1]; 
+            fibo[1] = fibo[2]; 
+        }
+        answer =   fibo[2];
+        return answer;
+    }
+}
