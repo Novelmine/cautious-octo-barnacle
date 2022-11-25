@@ -1,0 +1,45 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12927
+using System.Linq;
+using System;
+
+public class Solution {
+    public long solution(int n, int[] works) {
+        long answer = 0;
+        int sum = 0;
+        Array.ForEach(works, i => sum += i);
+        if(sum > n)
+        {
+            int p = works.Length - 1;
+            Array.Sort(works);
+            while(n>0)
+            {
+                n--;
+                if (works[p] > 0)
+                {
+                     works[p]--;
+                }
+                if (p == 0) 
+                {
+                    p =  works.Length - 1;
+                }
+                else 
+                { 
+                    if (works[p] < works[p - 1])
+                    {
+                         p--;
+                    }
+                    else
+                    {
+                         p = works.Length - 1;
+                    }
+                }
+            }
+            Array.ForEach(works, i => answer += i*i);
+        }
+        else
+        {
+            answer = 0;
+        }
+        return answer;
+    }
+}
