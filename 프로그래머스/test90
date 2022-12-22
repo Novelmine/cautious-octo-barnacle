@@ -1,0 +1,14 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120904
+
+
+using System;
+
+public class Solution {
+    public int solution(int num, int k) {
+        int answer = 0;
+        string num1 = num.ToString();
+        answer = num1.IndexOf(k.ToString());
+        if(answer >= 0) answer++;
+        return answer;
+    }
+}
