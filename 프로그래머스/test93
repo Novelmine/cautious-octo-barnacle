@@ -1,0 +1,17 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120890
+using System;
+
+public class Solution {
+    public int solution(int[] array, int n) {
+        int answer = n+100;
+        Array.Sort(array);
+        for(int i=0; i<array.Length; i++)
+        {
+            if(Math.Abs(n-answer) > Math.Abs(n-array[i]))
+            {
+                answer = array[i];
+            }
+        }
+        return answer;
+    }
+}
