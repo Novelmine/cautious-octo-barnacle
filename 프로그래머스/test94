@@ -1,0 +1,9 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120910?language=csharp
+using System;
+
+public class Solution {
+    public int solution(int n, int t) {
+        double answer = n * Math.Pow (Convert.ToDouble(2), Convert.ToDouble(t));       
+        return Convert.ToInt32(answer);
+    }
+}
