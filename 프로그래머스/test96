@@ -1,0 +1,17 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120906
+
+using System;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int k = 1;
+        while(n/k > 0)
+        {
+            int p = n / k;
+            answer += p % 10;
+            k = k * 10;
+        }
+        return answer;
+    }
+}
