@@ -1,0 +1,19 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120896
+using System;
+using System.Linq;
+
+public class Solution {
+    public string solution(string s) {
+        string answer = "";
+        s = String.Concat(s.OrderBy(ch => ch));
+        answer = s;
+        for(int i=0; i<s.Length; i++)
+        {
+            if(s.LastIndexOf(s[i]) != s.IndexOf(s[i]))
+            {
+                answer = answer.Replace(s[i].ToString(), ""); 
+            }
+        }
+        return answer;
+    }
+}
