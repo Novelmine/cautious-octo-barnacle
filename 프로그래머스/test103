@@ -1,0 +1,50 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120861
+using System;
+
+public class Solution {
+    public int[] solution(string[] keyinput, int[] board) {
+        int[] answer = new int[2];
+        for(int i=0; i<keyinput.Length; i++)
+        {
+            if(keyinput[i] == "right")
+            {
+                answer[0] += 1;
+            }
+            if(keyinput[i] == "left")
+            {
+                answer[0] -= 1;
+            }
+            if(keyinput[i] == "up")
+            {
+                answer[1] +=1;
+            }
+            if(keyinput[i] == "down")
+            {
+                answer[1] -=1;
+            }
+            if(Math.Abs(answer[0]) > board[0]/2 )
+            {
+                if(answer[0] > 0)
+                {
+                    answer[0] = board[0]/2;
+                }
+                else
+                {
+                    answer[0] = (board[0]/2) * -1;
+                }
+            }
+             if(Math.Abs(answer[1]) > board[1]/2 )
+            {
+                if(answer[1] > 0)
+                {
+                    answer[1] = board[1]/2;
+                }
+                else
+                {
+                    answer[1] = (board[1]/2) * -1;
+                }
+            }
+        }
+        return answer;
+    }
+}
