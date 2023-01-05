@@ -1,0 +1,35 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/136798
+using System;
+
+public class Solution {
+    public int solution(int number, int limit, int power) {
+        int answer = 0;
+        for(int i=number; i>0; i--)
+        {
+            int k = 0;
+            for(int o=1; o<=Math.Sqrt(i); o++)
+            {
+                if(i%o == 0)
+                {
+                    if(i/o == o)
+                    {
+                        k++;
+                    }
+                    else
+                    {
+                        k = k+2;
+                    }
+                }
+            }
+            if(k >limit)
+            {
+                answer += power;
+            }
+            else
+            {
+                answer += k;
+            }
+        }
+        return answer;
+    }
+}
