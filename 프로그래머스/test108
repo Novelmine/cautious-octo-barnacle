@@ -1,0 +1,33 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12979
+using System;
+using System.Collections.Generic;
+
+class Solution
+{
+    public int solution(int n, int[] stations, int w){
+        int answer = 0;
+        int start = 0;
+        List<int> list = new List<int>();
+        for(int i=0; i<stations.Length; i++)
+        {
+            if(stations[i]-w-1-start > 0)
+            {
+                list.Add(stations[i]-w-1-start);
+            }
+            start = stations[i] + w;
+        }
+        if(start < n)
+        {
+             list.Add(n-start);
+        }
+        for(int p=0; p<list.Count; p++)
+        {
+            answer += list[p]/((w*2) +1);
+            if(list[p]%((w*2)+1) > 0)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
