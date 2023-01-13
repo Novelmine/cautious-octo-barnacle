@@ -1,0 +1,14 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/12915
+using System.Linq;
+using System;
+public class Solution {
+    public string[] solution(string[] strings, int n) {
+        Array.Sort(strings, (a, b) => {
+            if (a.Substring(n, 1) == b.Substring(n, 1))
+                return String.Compare(a,b);
+            else 
+                return String.Compare(a.Substring(n, 1), b.Substring(n, 1));
+            });   
+        return strings;
+    }
+}
