@@ -1,0 +1,44 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/42578
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Solution {
+    public int solution(string[,] clothes) {
+        int answer = 1;
+        string[] clothe = new string[clothes.GetLength(0)];
+        for(int i=0; i<clothes.GetLength(0); i++)
+        {
+            clothe[i] = clothes[i,1];
+        }
+        Array.Sort(clothe);
+        int count = 0;
+        List<int> lst = new List<int>();
+        lst.Add(2);
+        for(int i=1; i<clothe.Length; i++)
+        {
+            if(clothe[i-1] == clothe[i])
+            {
+                lst[count] = lst[count] + 1;
+            }
+            else
+            {
+                count++;
+                lst.Add(2);
+            }
+        }
+        foreach (int num in lst)
+        {
+            if(lst.Count == 1)
+            {
+                answer = num;
+            }
+            else
+            {
+                answer = (answer * num);
+            }
+        }
+        return answer-1;
+    }
+}
