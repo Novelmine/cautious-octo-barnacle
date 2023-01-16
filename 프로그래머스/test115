@@ -1,0 +1,48 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/42586
+
+using System;
+using System.Collections.Generic;
+
+public class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int k =1;
+        int[] num = new int[progresses.Length] ;
+        for(int i=0; i<progresses.Length; i++)
+        {
+            num[i] = (100 - progresses[i]) / speeds[i];
+            if((100 - progresses[i])%speeds[i] !=0)
+            {
+                 num[i] = num[i]+1;
+            }
+        };
+        List<int> lst = new List<int>();
+        int count = num[0];
+        int days = 0;
+        for(int i=0; i<num.Length; i++)
+        {
+            if(i == num.Length-1)
+            {
+                if(count >= num[i])
+                {
+                    lst.Add(days + 1);
+                }
+                else if(count < num[i])
+                {
+                    lst.Add(days);
+                    lst.Add(1);
+                }
+            }
+            else if(count >= num[i])
+            {
+                days++;
+            }
+            else
+            {
+                lst.Add(days);
+                count = num[i];
+                days = 1;
+            }
+        }
+        return lst.ToArray();
+    }
+}
