@@ -1,0 +1,12 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120880
+using System;
+using System.Linq;
+
+public class Solution {
+    public int[] solution(int[] numlist, int n) {
+        Array.Sort(numlist);
+        Array.Reverse(numlist);
+        int[] answer = numlist.OrderBy(k => Math.Abs(k-n)).ToArray();
+        return answer;
+    }
+}
