@@ -1,0 +1,19 @@
+using System;
+https://school.programmers.co.kr/learn/courses/30/lessons/120834
+public class Solution {
+    public string solution(int age) {
+        string answer = "";
+        int k = 1;
+        while(age/k > 0)
+        {
+            int p = age/k%10;
+            answer += Convert.ToChar(p+97);
+            k = k * 10;
+            Console.WriteLine(p);
+        }
+        char[] chars = answer.ToCharArray();
+        Array.Reverse(chars);
+        answer = new string(chars);
+        return answer;
+    }
+}
