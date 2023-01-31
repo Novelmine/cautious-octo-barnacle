@@ -1,0 +1,41 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120812#
+
+using System;
+
+public class Solution {
+    public int solution(int[] array) {
+        int count = 0;
+        int newindex = 0;
+        Array.Sort(array);
+        int answer = Array.LastIndexOf(array,array[0]) +1;
+        int index = Array.LastIndexOf(array,array[0]) +1;
+        while(index < array.Length)
+        {
+            int mins = Array.LastIndexOf(array,array[index]) - Array.IndexOf(array, array[index]) + 1;
+            if(mins > answer)
+            {
+                answer = mins;
+                newindex = index;
+                count = 0;
+            }
+            else if (mins == answer)
+            {
+                count = 1;
+            }
+            index = Array.LastIndexOf(array,array[index]) +1;
+        }
+        if(array.Length == 1)
+        {
+            answer = array[0];
+        }
+        else if(count == 1)
+        {
+            answer = -1;
+        }
+        else
+        {
+            answer = array[newindex];
+        }
+        return answer;
+    }
+}
