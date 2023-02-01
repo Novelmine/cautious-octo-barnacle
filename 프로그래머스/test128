@@ -1,0 +1,23 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120840
+using System;
+
+public class Solution {
+    public int solution(int balls, int share) {
+        int answer = 1;
+        double answer1 = 1;
+        for(int i=1; i<=balls ; i++)
+        {
+            answer1 = answer1 * i;
+            if(i <= balls-share)
+            {
+                answer1 = answer1 / i;
+            }
+        }
+        for(int i=1; i<=share ; i++)
+        {
+            answer1 = answer1 / i;
+        }
+        answer = (int)answer1;
+        return answer;
+    }
+}
