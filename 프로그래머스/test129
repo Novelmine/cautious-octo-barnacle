@@ -1,0 +1,27 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120913
+using System;
+
+public class Solution {
+    public string[] solution(string my_str, int n) {
+        int index = my_str.Length/n;
+        if (my_str.Length%n > 0)
+        {
+            index++;
+        }
+        string[] answer = new string[index];
+        int indexanswer = 0;
+        for(int i=0; i<index; i++)
+        {
+            if(i >= index-1)
+            {
+                answer[i] = my_str.Substring(indexanswer,my_str.Length-indexanswer);
+            }
+            else
+            {
+                answer[i] = my_str.Substring(indexanswer,n);
+            }
+            indexanswer = indexanswer + n;
+        }
+        return answer;
+    }
+}
