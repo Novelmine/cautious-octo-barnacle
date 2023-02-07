@@ -1,0 +1,21 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120886
+using System;
+
+public class Solution {
+    public int solution(string before, string after) {
+        int answer = 1;
+        char[] beforechars = before.ToCharArray();
+        char[] afterchars = after.ToCharArray();
+        Array.Sort(beforechars);
+        Array.Sort(afterchars);
+        for(int i=0; i<beforechars.Length; i++)
+        {
+            if(beforechars[i] != afterchars[i])
+            {
+                answer = 0;
+                break;
+            }
+        }
+        return answer;
+    }
+}
