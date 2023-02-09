@@ -1,0 +1,41 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120869
+using System;
+
+public class Solution {
+    public int solution(string[] spell, string[] dic) {
+        int answer = 2;
+        for(int i=0; i<dic.Length; i++)
+        {
+            for(int p=0; p<spell.Length; p++)
+            {
+                if(dic[i].Contains(spell[p]))
+                {
+                    if(dic[i].IndexOf(spell[p]) == dic[i].LastIndexOf(spell[p]))
+                    {
+                        answer = 3;
+                    }
+                    else
+                    {
+                        answer = 2;
+                        break;
+                    }
+                }
+                else
+                {
+                    answer = 2;
+                    break;
+                }
+            }
+            if(answer == 3 && dic[i].Length == spell.Length)
+            {
+                answer = 1;
+                break;
+            }
+        }
+        if(answer == 3)
+        {
+            answer = 2;
+        }
+        return answer;
+    }
+}
