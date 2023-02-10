@@ -1,0 +1,51 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/133499
+using System;
+using System.Text.RegularExpressions;
+
+public class Solution {
+    public int solution(string[] babbling) {
+        int answer = 0;
+        string[] babb = new string[] { "aya", "ye", "woo", "ma" };
+        int count = 0;
+        for(int i=0; i<babbling.Length; i++)
+        {
+            string test = babbling[i];
+            count = 0;
+            for(int p=0; p<babb.Length; p++)
+            {
+                test = test.Replace(babb[p], "1");
+                if(test.Contains("11"))
+                {
+                    count = 1;
+                    break;
+                }
+                test = babbling[i];
+            }
+            if(count == 0)
+            {
+                test = babbling[i];
+                for(int p=0; p<babb.Length; p++)
+                {
+                    test = test.Replace(babb[p], " ");
+                }
+            }
+            int newcou = 0;
+            foreach (char c in test)
+            {
+                if(c == ' ')
+                {
+                    newcou++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if(newcou == test.Length)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
