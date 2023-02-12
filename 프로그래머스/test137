@@ -1,0 +1,27 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/68935
+using System;
+
+public class Solution {
+    public int solution(int n) {
+        string ternaryNumber = "";
+        while (n > 0)
+        {
+            int remainder = n % 3;
+            ternaryNumber = remainder + ternaryNumber;
+            n /= 3;
+        }
+        char[] charArray = ternaryNumber.ToCharArray();
+        Array.Reverse(charArray);
+        ternaryNumber = new string(charArray);
+        int answer = 0;
+        int power = 1;
+        for (int i = ternaryNumber.Length - 1; i >= 0; i--)
+        {
+            int digit = int.Parse(ternaryNumber[i].ToString());
+            answer += digit * power;
+            power *= 3;
+        }
+        
+        return answer;
+    }
+}
